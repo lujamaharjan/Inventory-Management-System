@@ -1,4 +1,5 @@
 macbook,9,99
-dell,5,90
+dell,6,90
 lenovo,7,60
 intel,5,500
+ubuntuImage,5,20

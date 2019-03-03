@@ -31,7 +31,6 @@ def decreaseStock(stockName,quantity):
         arr[1] = int(arr[1])
         arr[2] = int(arr[2])
         if arr[0].lower() == stockName.lower():
-            print("product found!")
             if quantity <= arr[1]:
                 arr[1] = arr[1] - quantity
             else:
@@ -56,7 +55,7 @@ def newProductAdd(productName,stock,pricePerUnit):
     fh = open('stocks.txt','a')
     fh.write(productName + ',' + str(stock) + ',' + str(pricePerUnit) + os.linesep)
     fh.close()
-    print("New print Added sucessfully!")
+    print("New product Added sucessfully!")
 
 def increaseStockInExisting(productName,newStock):
     arr = list()
@@ -87,3 +86,15 @@ def increaseStockInExisting(productName,newStock):
     file.write('')
     file.close()
     print("Stock added sucessfully!")
+
+def getPrice(productName):
+    arr = list()
+    price = 0
+    fh = open("stocks.txt",'r')
+    for lines in fh:
+        arr = lines.split(',')
+        arr[2] = int(arr[2])
+        if arr[0].lower() == productName.lower():
+            price = arr[2]
+            break
+    return price

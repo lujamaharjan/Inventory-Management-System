@@ -1,2 +1,3 @@
 1,sachin maharjan,macbook,95,99,Mon Feb 15 09:34:03 2016
 2,ram,intel,3,83,Sun Mar  3 11:32:09 2019
+3,johnson,dell,5,90,Sun Mar  3 14:19:00 2019

@@ -16,14 +16,20 @@ def generateInvoice(customer,productName,discountedAmount,totalAmount):
         line += 1
     newline = line + 1 # This will be newline no i.e. new customer id
     fh.close()
-    dateTime = time.asctime( time.localtime(time.time()) ) #get the local date and time
+    dateTime = str(time.asctime( time.localtime(time.time()) )) #get the local date and time
     fh = open('customerInfo.txt','a')
     temp = str(newline) +','+customer+','+productName+','+str(discountedAmount)+','+\
-            str(totalAmount)+','+str(dateTime)+os.linesep
+            str(totalAmount)+','+ dateTime + os.linesep
     fh.write(temp)
     fh.close()
-
-#displays customerInfo 
+    print("The invoice for this sales is:")
+    print("Sales ID : " + str(newline))
+    print("Customer Name : " + customer)
+    print("Product Name : " + productName)
+    print("discountedAmount : $" + str(discountedAmount))
+    print("Total Amount: $" + str(totalAmount))
+    print("Date and Time : " + dateTime +'\n')
+#displays customerInfo
 def getCustomerInfo():
     fh = open('customerInfo.txt','r')
     print(fh.read())
